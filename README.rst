@@ -2,7 +2,7 @@
 Venus Tempest Plugin
 =====================
 
-This is a cyorg tempest plugin package. Tests can be run as a tempest plugin
+This is a venus tempest plugin package. Tests can be run as a tempest plugin
 against any venus-enabled OpenStack cloud.
 
 Please fill here a long description which must be at least 3 lines wrapped on
