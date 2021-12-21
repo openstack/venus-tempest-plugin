@@ -10,11 +10,6 @@ Please fill here a long description which must be at least 3 lines wrapped on
 Note that this is a hard requirement.
 
 * Free software: Apache license
-* Documentation: https://docs.openstack.org/venus-tempest-plugin/latest
+* Documentation: https://docs.openstack.org/venus/latest
 * Source: https://opendev.org/openstack/venus-tempest-plugin/
-* Bugs: https://storyboard.openstack.org/#!/project/968
-
-Features
---------
-
-* TODO
+* Bugs: https://bugs.launchpad.net/openstack-venus
