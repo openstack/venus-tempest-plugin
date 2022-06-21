@@ -87,6 +87,23 @@ class TestDeviceProfileController(base.BaseAPITest):
         device_profile_uuid_list = [it['uuid'] for it in device_profile_list]
         self.assertNotIn(device_profile_uuid, device_profile_uuid_list)
 
+    def test_delete_single_device_profile_by_name(self):
+        dp = [{
+            "name": "afaas_example_1",
+            "groups": [
+                {"resources:FPGA": "1",
+                 "trait:CUSTOM_FPGA_1": "required",
+                 "trait:CUSTOM_FUNCTION_ID_3AFB": "required",
+                 }
+                ]
+        }]
+        self.os_admin.venus_client.create_device_profile(dp)
+        self.os_admin.venus_client.delete_device_profile(dp[0]['name'])
+        list_resp = self.os_admin.venus_client.list_device_profile()
+        device_profile_list = list_resp['device_profiles']
+        device_profile_name_list = [it['name'] for it in device_profile_list]
+        self.assertNotIn(dp[0]['name'], device_profile_name_list)
+
     @classmethod
     def resource_cleanup(cls):
         super(TestDeviceProfileController, cls).resource_cleanup()
