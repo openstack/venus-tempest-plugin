@@ -52,8 +52,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'venus-tempest-plugin Release Notes'
-copyright = u'2017, OpenStack Developers'
+project = 'venus-tempest-plugin Release Notes'
+copyright = '2017, OpenStack Developers'
 
 # openstackdocstheme options
 openstackdocs_repo_name = 'openstack/venus-tempest-plugin'
@@ -211,8 +211,8 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     ('index', 'venus-tempest-pluginReleaseNotes.tex',
-     u'venus-tempest-plugin  Release Notes Documentation',
-     u'OpenStack Foundation', 'manual'),
+     'venus-tempest-plugin  Release Notes Documentation',
+     'OpenStack Foundation', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -242,8 +242,8 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'venus-tempest-pluginrereleasenotes',
-     u'venus-tempest-plugin  Release Notes Documentation',
-     [u'OpenStack Foundation'], 1)
+     'venus-tempest-plugin  Release Notes Documentation',
+     ['OpenStack Foundation'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -257,8 +257,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     ('index', 'venus-tempest-plugin ReleaseNotes',
-     u'venus-tempest-plugin Release Notes Documentation',
-     u'OpenStack Foundation', 'venus-tempest-pluginReleaseNotes',
+     'venus-tempest-plugin Release Notes Documentation',
+     'OpenStack Foundation', 'venus-tempest-pluginReleaseNotes',
      'One line description of project.',
      'Miscellaneous'),
 ]
