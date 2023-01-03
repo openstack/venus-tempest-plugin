@@ -68,6 +68,11 @@ class VenusRestClient(rest_client.RestClient):
         resp, body = self.delete(url)
         return self._response_helper(resp, body)
 
+    def list_versions(self):
+        url = "/"
+        resp, body = self.get(url)
+        return self._response_helper(resp, body)
+
 
 def get_auth_provider(credentials, scope='project'):
     default_params = {
