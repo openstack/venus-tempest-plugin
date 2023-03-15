@@ -72,9 +72,8 @@ class ScenarioTest(tempest.test.BaseTestCase):
 
         auth_prov = get_auth_provider(credentials)
         cls.os_admin.venus_client = (
-            clients.VenusRestClient(auth_prov,
-                                     'accelerator',
-                                     CONF.identity.region))
+            clients.VenusRestClient(auth_prov, 'accelerator',
+                                    CONF.identity.region))
 
     # ## Test functions library
     #

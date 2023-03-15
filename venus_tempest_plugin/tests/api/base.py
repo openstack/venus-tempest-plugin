@@ -39,9 +39,8 @@ class BaseAPITest(test.BaseTestCase):
             'identity_admin')
         auth_prov = get_auth_provider(credentials=credentials)
         cls.os_admin.venus_client = (
-            client.VenusRestClient(auth_prov,
-                                    'accelerator',
-                                    CONF.identity.region))
+            client.VenusRestClient(auth_prov, 'accelerator',
+                                   CONF.identity.region))
 
     @classmethod
     def setup_credentials(cls):
