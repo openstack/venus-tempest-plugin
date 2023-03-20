@@ -27,46 +27,11 @@ LOG = logging.getLogger(__name__)
 
 class VenusRestClient(rest_client.RestClient):
     """Client class for accessing the venus API."""
-    DP_URL = '/device_profiles'
 
     def _response_helper(self, resp, body=None):
         if body:
             body = json.loads(body)
         return rest_client.ResponseBody(resp, body)
-
-    def create_device_profile(self, body):
-        body = json.dump_as_bytes(body)
-        resp, body = self.post(self.DP_URL, body=body)
-        return self._response_helper(resp, body)
-
-    def delete_device_profile(self, name):
-        url = self.DP_URL + "/" + name
-        resp, body = self.delete(url)
-        return self._response_helper(resp, body)
-
-    def list_device_profile(self):
-        resp, body = self.get(self.DP_URL)
-        return self._response_helper(resp, body)
-
-    def delete_multiple_device_profile_by_names(self, *device_profile_names):
-        names = ','.join(device_profile_names)
-        url = self.DP_URL + "?value=" + names
-        resp, body = self.delete(url)
-        return self._response_helper(resp, body)
-
-    def list_devices(self):
-        resp, body = self.get("/devices")
-        return self._response_helper(resp, body)
-
-    def get_device_profile(self, device_profile_uuid):
-        url = self.DP_URL + "/" + device_profile_uuid
-        resp, body = self.get(url)
-        return self._response_helper(resp, body)
-
-    def delete_device_profile_by_uuid(self, device_profile_uuid):
-        url = self.DP_URL + "/" + device_profile_uuid
-        resp, body = self.delete(url)
-        return self._response_helper(resp, body)
 
 
 def get_auth_provider(credentials, scope='project'):
