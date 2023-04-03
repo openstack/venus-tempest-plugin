@@ -27,11 +27,21 @@ LOG = logging.getLogger(__name__)
 
 class VenusRestClient(rest_client.RestClient):
     """Client class for accessing the venus API."""
+    CC_URL = '/custom_config'
 
     def _response_helper(self, resp, body=None):
         if body:
             body = json.loads(body)
         return rest_client.ResponseBody(resp, body)
+
+    def set_custom_config(self, body):
+        body = json.dump_as_bytes(body)
+        resp, body = self.post(self.CC_URL, body=body)
+        return self._response_helper(resp, body)
+
+    def get_custom_config(self):
+        resp, body = self.get(self.CC_URL)
+        return self._response_helper(resp, body)
 
 
 def get_auth_provider(credentials, scope='project'):
